@@ -38,9 +38,8 @@ class DomicilioForm(forms.ModelForm):
             'fecha': widgets.DateInput(attrs={'type':'date'},format='%Y-%m-%d'),
             'fecha_envio': widgets.DateInput(attrs={'type':'date'},format='%Y-%m-%d'),
             'fecha_entrega': widgets.DateInput(attrs={'type':'date'},format='%Y-%m-%d')
-
         }        
-        exclude=["estado", "fecha","fecha_envio","fecha_entrega"]
+        exclude=["estado","fecha_envio","fecha_entrega"]
 class DomicilioUpdateForm(ModelForm):
     class Meta:
         model = Domicilio

@@ -6,7 +6,7 @@ from ventas.forms import MetododepagoForm,MetododepagoUpdateForm
 from ventas.models import Domicilio
 from ventas.forms import DomicilioForm,DomicilioUpdateForm
 from django.contrib import messages
-
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 def venta_crear(request):
     titulo="Venta"

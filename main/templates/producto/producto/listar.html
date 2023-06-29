@@ -1,18 +1,18 @@
 {% extends 'partials/body.html' %}  {% load static %}  {% block contenido %}
 <div class="wrapper">
   <!-- Main content -->
-  <section class="content">
+  <section class="content w-100">
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title"> {{titulo}} </h3>
+      <div class="row px-5 mx-5">
+        <div class="col px-5 mx-5">
+          <div class="px-5 mx-5">
+            <div class="fs-1 fw-bold">
+              <h3 class="py-5"> {{titulo}} </h3>
             </div>
-  <div class="card-body">
-    <table id="example1" class="table table-bordered table-striped">
-      <thead>
-        <tr>
+  <div class="table-responsive"style=" background-color: #fcf9f5; border-color: #68411d; border-width: 3px; border-style: solid; padding: 35px;">
+    <table id="example1" class="table table-bordered table-striped py-5">
+      <thead style="background-color: #fcf9f5">
+        <tr style="background-color: #d4c6b5;text-align: center;">
           <th>Nombre</th>
           <th>Precio</th>
           <th>Color</th>
@@ -28,22 +28,23 @@
         <tbody>
           {% for producto in productos %}
           {% if producto.estado != "0" %}
-            <tr>
-              <td>{{producto.nombre}}</td>
-              <td>{{producto.precio}}</td>
-              <td>{{producto.get_color_display}}</td>
-              <td>{{producto.get_presentacion_display}}</td>
-              <td>{{producto.get_material_display}}</td>
-              <td>{{producto.marca}}</td>
-              <td>{{producto.unidades}}</td>
-              <td>{{producto.categoria}}</td>
-              <td>{{producto.get_estado_display}}</td>
-              <td>
-                <button  type="button" data-ident="{{producto.id}}" class="btnEliminar btn btn-danger"
+            <tr style="background-color: #f3eee9">
+              <td style="color: #68411d;text-align: center;">{{producto.nombre}}</td>
+              <td style="color: #68411d;text-align: center;">{{producto.precio}}</td>
+              <td style="color: #68411d;text-align: center;">{{producto.get_color_display}}</td>
+              <td style="color: #68411d;text-align: center;">{{producto.get_presentacion_display}}</td>
+              <td style="color: #68411d;text-align: center;">{{producto.get_material_display}}</td>
+              <td style="color: #68411d;text-align: center;">{{producto.marca}}</td>
+              <td style="color: #68411d;text-align: center;">{{producto.unidades}}</td>
+              <td style="color: #68411d;text-align: center;">{{producto.categoria}}</td>
+              <td style="color: #68411d;text-align: center;">{{producto.get_estado_display}}</td>
+
+              <td style="text-align: center;">
+                <button  type="button" data-ident="{{producto.id}}" class="btnEliminar animatede-button"
           data-bs-toggle="modal" data-bs-target="#modalConf">
           Eliminar</button>
                 <a
-                  class="btn btn-primary"
+                  class="btn animatedm-button btn-primary"
                   href="{% url 'producto-modificar' producto.id %}"
                   >Modificar</a
                 >
@@ -53,6 +54,11 @@
         {% endfor %}
       </tbody>
     </table>
+    <a href="{% url 'producto-crear' %}">
+      <button class="animatedd-button" type="button">
+        Crear {{titulo}}
+      </button>
+    </a>
   </div>
   <!-- /.card-body -->
 </div>
@@ -65,7 +71,5 @@
 <!-- /.container-fluid -->
 </section>
 <!-- /.content -->
-<a href="{% url 'producto-crear' %}" class="btn btn-success w-25"
-  >Crear {{titulo}}</a>
 </div>
 {% endblock contenido %}

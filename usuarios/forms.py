@@ -21,7 +21,6 @@ class UsuarioForm(forms.ModelForm):
     class Meta:
         model=Usuario
         fields = "__all__"
-
         exclude=["estado"]
 class UsuarioUpdateForm(ModelForm):
     class Meta:

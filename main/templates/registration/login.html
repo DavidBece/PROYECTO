@@ -2,15 +2,17 @@
 {% load static %}
 {% block contenido %}
 
-<div class="w-100 overflow-hidden">
+
+
+<div class="overflow-hidden">
     <div class="my-5 py-3 mx-5 justify-content-center align-items-center">
         <div class="d-block px-5 my-5 justify-content-center ">
             <div class=" w-100 justify-content-center d-flex">
-                <img src="{% static 'img/logo.png' %}" alt="AdminLTE Logo" class="brand-image img-circle w-25 " style="opacity: .8">
+                <img src="{% static 'img/logo.png' %}" alt="AdminLTE Logo" class="brand-image img-circle w-100 " style="opacity: .8; max-width: 400px; min-width: 200px;">
             </div>
         </div>
-        <div class="row mx-5 px-5 d-flex">
-            <div class="mx-5 col align-items-center p-3 justify-content-center d-flex" style="border: 6px solid white;">
+        <div class="row p-lg-5 d-flex justify-content-center">
+            <div class="col-md-5 mx-md-2 mx-lg-3 col-lg-5  col-sm-12 my-sm-3  align-items-center p-3 justify-content-center d-flex position-relative" style="border: 6px solid white; min-width: 250px; min-height: 400px;">
                 <div class="w-75 p-3 d-block">
                     <h2 class="mb-4 fw-bold d-block"style="color: #68411d;">Iniciar Sesión</h2>
                     <form class="" method="post">
@@ -70,7 +72,7 @@
                     </p>
                 </div>
             </div>
-            <div class="mx-5 col align-items-center p-3 justify-content-center d-flex" style="border: 6px solid white;">
+            <div class="my-sm-3 mx-lg-3 mx-md-2 col-md-5 col-lg-5  col-sm-12 align-items-center p-3 justify-content-center d-flex" style="border: 6px solid white; min-width: 250px; min-height: 400px;">
                 <div class="w-75">
                     <h2 class="fw-bold mb-4 d-block" style="color: #68411d;">¿Aún no tienes cuenta?</h2>
                     <p class="mb-4 lh-base fs-5 w-100 fw-medium" style="color: #68411d;">Ingresa y conoce los grandes beneficios de pertenecer a nuestra familia</p>

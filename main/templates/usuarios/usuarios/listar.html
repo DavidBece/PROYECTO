@@ -3,16 +3,16 @@
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title"> {{titulo}} </h3>
+      <div class="row px-5 mx-5">
+        <div class="col px-5 mx-5">
+          <div class="px-5 mx-5">
+            <div class="fs-1 fw-bold">
+              <h3 class="py-5"> {{titulo}} </h3>
             </div>
-  <div class="card-body">
-<table id="example1"  class="table table-bordered table-striped">
-  <thead>
-    <tr>
+  <div class="table-responsive" style=" background-color: #fcf9f5; border-color: #68411d; border-width: 3px; border-style: solid; padding: 35px;">
+<table id="example1"  class="table table-bordered table-striped py-5">
+  <thead style="background-color: #fcf9f5">
+    <tr style="background-color: #d4c6b5;text-align: center;">
       <th>Nombre</th>
       <th>Apellido</th>
       <th>Contraseña</th>
@@ -29,24 +29,24 @@
   </thead>
   <tbody>
     {% for usuario in usuarios %} {% if usuario.estado != "0" %}
-    <tr>
-      <td>{{usuario.nombre}}</td>
-      <td>{{usuario.apellido}}</td>
-      <td>{{usuario.contraseña}}</td>
-      <td>{{usuario.get_tipo_documento_display}}</td>
-      <td>{{usuario.documento}}</td>
-      <td>{{usuario.telefono}}</td>
-      <td>{{usuario.direccion}}</td>
-      <td>{{usuario.correo}}</td>
-      <td>{{usuario.get_rol_display}}</td>
-      <td>{{usuario.get_estado_display}}</td>
+    <tr style="background-color: #f3eee9">
+      <td style="color: #68411d;text-align: center;">{{usuario.nombre}}</td>
+      <td style="color: #68411d;text-align: center;">{{usuario.apellido}}</td>
+      <td style="color: #68411d;text-align: center;">{{usuario.contraseña}}</td>
+      <td style="color: #68411d;text-align: center;">{{usuario.get_tipo_documento_display}}</td>
+      <td style="color: #68411d;text-align: center;">{{usuario.documento}}</td>
+      <td style="color: #68411d;text-align: center;">{{usuario.telefono}}</td>
+      <td style="color: #68411d;text-align: center;">{{usuario.direccion}}</td>
+      <td style="color: #68411d;text-align: center;">{{usuario.correo}}</td>
+      <td style="color: #68411d;text-align: center;">{{usuario.get_rol_display}}</td>
+      <td style="color: #68411d;text-align: center;">{{usuario.get_estado_display}}</td>
 
-      <td>
-        <button  type="button" data-ident="{{usuario.id}}" class="btnEliminar btn btn-danger"
+      <td style="text-align: center;">
+        <button  type="button" data-ident="{{usuario.id}}" class="btnEliminar animatede-button"
                     data-bs-toggle="modal" data-bs-target="#modalConf">
                     Eliminar</button>
         <a
-          class="btn btn-primary"
+          class="btn animatedm-button btn-primary"
           href="{% url 'usuario-modificar' usuario.id %}"
           >Modificar</a>
       </td>
@@ -54,6 +54,11 @@
     {% endif %} {% endfor %}
   </tbody>
 </table>
+<a href="{% url 'usuario-crear' %}">
+  <button class="animatedd-button" type="button">
+    Crear {{titulo}}
+  </button>
+</a>
 </div>
 <!-- /.card-body -->
 </div>
@@ -66,8 +71,5 @@
 <!-- /.container-fluid -->
 </section>
 <!-- /.content -->
-<a href="{% url 'usuario-crear' %}" class="btn btn-success w-25"
-  >Crear {{titulo}}</a
->
 </div>
 {% endblock contenido %}

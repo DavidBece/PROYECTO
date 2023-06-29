@@ -1,72 +1,76 @@
-{% extends 'partials/body.html' %} {% load static %}  {% block contenido %}
-
-<div class="">
+{% extends 'partials/body.html' %} {% load static %} {% block contenido %}
+<div class="wrapper">
   <!-- Main content -->
-  <section class="container">
-    <div class="">
-      <div class="">
-        <div class="">
-          <div class="">
-
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row px-5 mx-5">
+        <div class="col px-5 mx-5">
+          <div class="px-5 mx-5">
             <div class="fs-1 fw-bold">
-              <h4 class=""> {{titulo}} </h4>
+              <h3 class="py-5">{{titulo}}</h3>
             </div>
+            <div class="table-responsive" style=" background-color: #fcf9f5; border-color: #68411d;
+                border-width: 3px;
+                border-style: solid;
+                padding: 35px;">
+              <table id="example1" class="table table-bordered table-striped py-5">
+                <thead style="background-color: #fcf9f5">
+                  <tr style="background-color: #d4c6b5; text-align: center">
+                    <th>Fecha</th>
+                    <th>ID Usuario</th>
+                    <th>ID Cuenta Pendiente</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for compra in compras %} {% if compra.estado != "0" %}
+                  <tr style="background-color: #f3eee9">
+                    <td style="color: #68411d; text-align: center">{{compra.fecha}}:
+                    </td>
+                    <td style="color: #68411d; text-align: center">{{compra.idusuario}}
+                    </td>
+                    <td style="color: #68411d; text-align: center">{{compra.idcuentapendiente}}
+                    </td>
+                    <td style="color: #68411d; text-align: center">{{compra.get_estado_display}}
+                    </td>
 
-  <div class="" style="background-color: #fcf9f5;  border-color: #68411d;border-width: 5px; border-style: solid;">
-<table  id="example1"  class="table table-bordered table-striped">
-  <thead style="background-color: #fcf9f5;">
-    <tr>
-      <th>Fecha</th>
-      <th>ID Usuario</th>
-      <th>ID Cuenta Pendiente</th>
-      <th>Estado</th>
-      <th>Acciones</th>
-
-
-    </tr>
-  </thead>
-  <tbody>
-    {% for compra in compras %} 
-    {% if compra.estado != "0" %}
-      <tr>
-        <td>{{compra.fecha}}</td>
-        <td>{{compra.idusuario}}</td>
-        <td>{{compra.idcuentapendiente}}</td>
-        <td>{{compra.get_estado_display}}</td>
-
-        <td>
-          <button type="button" data-ident="{{compra.id}}" class="btnEliminar animatede-button "
-                    data-bs-toggle="modal" data-bs-target="#modalConf">
-                    Eliminar</button>
-          <a
-            class="btn animatedm-button btn-primary"
-            href="{% url 'compra-modificar' compra.id %}"
-            >Modificar</a
-          >
-        </td>
-      </tr>
-      {% endif %} 
-    {% endfor %}
-  </tbody>
-  
-</table>
-<a href="{% url 'compra-crear' %}">              
-  <button class="animatedd-button" type="button" >Crear {{titulo}}</button>
-</a>
-
-
-
-</div>
-<!-- /.card-body -->
-</div>
-<!-- /.card -->
-</div>
-<!-- /.col -->
-</div>
-<!-- /.row -->
-</div>
-<!-- /.container-fluid -->
-</section>
-<!-- /.content -->
+                    <td style="text-align: center;">
+                      <button
+                        type="button"
+                        data-ident="{{compra.id}}"
+                        class="btnEliminar animatede-button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modalConf"
+                      >
+                        Eliminar
+                      </button>
+                      <a
+                        class="btn animatedm-button btn-primary"
+                        href="{% url 'compra-modificar' compra.id %}"
+                        >Modificar</a
+                      >
+                    </td>
+                  </tr>
+                  {% endif %} {% endfor %}
+                </tbody>
+              </table>
+              <a href="{% url 'compra-crear' %}">
+                <button class="animatedd-button" type="button">
+                  Crear {{titulo}}
+                </button>
+              </a>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
 </div>
 {% endblock contenido %}

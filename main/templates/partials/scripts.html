@@ -140,10 +140,10 @@
                         "system": "Ha ocurrido un error del sistema ( Mas Información)"
                     }
                 },
-                "emptyTable": "La tabla de {{ titulo }} está vacía",
-                "info": "Mostrando registros del inicio al final de los registros",
-                "infoEmpty": "No hay información para mostrar en la tabla {{ titulo }}",
-                "lengthMenu": "Mostrando registros",
+                "emptyTable": " ",
+                "info": " ",
+                "infoEmpty": " ",
+                "lengthMenu": " ",
                 "loadingRecords": "Cargando...",
                 "searchBuilder": {
                     "button": {
@@ -210,10 +210,10 @@
                     }
                 },
                 "searchPanes": {
-                    "clearMessage": "Borrar Filtro",
+                    "clearMessage": " ",
                     "collapseMessage": "desplegar todo",
                     "loadMessage": "Cargando informacion",
-                    "showMessage": "Mostrar todos",
+                    "showMessage": " ",
                     "title": "Filtros Activos - %d",
                     "collapse": {
                         "0": "Paneles de Búsqueda",
@@ -242,7 +242,7 @@
                     "sortDescending": "Activar para ordenar descendente"
                 },
                 "decimal": ".",
-                "infoFiltered": "filtrado de MAX entradas totales",
+                "infoFiltered": " ",
                 "infoThousands": ",",
                 "paginate": {
                     "first": "Primero",
@@ -285,24 +285,24 @@
                 }
             },
             "buttons": [
-            {
-                extend:    'excelHtml5',
-                text:      '<i class="fas fa-file-excel"><h10> Excel</h10></i> ',
-                titleAttr: 'Exportar a Excel',
-                className: 'btn btn-success'
-            },
-            {
-                extend:    'pdfHtml5',
-                text:      '<i class="fas fa-file-pdf"><h10> PDF</h10></i> ',
-                titleAttr: 'Exportar a PDF',
-                className: 'btn btn-danger'
-            },
-            {
-                extend:    'print',
-                text:      '<i class="fa fa-print"><h10> Imprimir</h10></i> ',
-                titleAttr: 'Imprimir',
-                className: 'btn btn-info'
-            },
+                {
+                    extend:    'excelHtml5',
+                    text:      '<i class="fas fa-file-excel"><h10 class="fw-normal"> Excel</h10></i> ',
+                    titleAttr: 'Exportar a Excel',
+                    className: 'animatedd-button'
+                },
+                {
+                    extend:    'pdfHtml5',
+                    text:      '<i class="fas fa-file-pdf"><h10 class="fw-normal"> PDF</h10></i> ',
+                    titleAttr: 'Exportar a PDF',
+                    className: 'animatedd-button'
+                },
+                {
+                    extend:    'print',
+                    text:      '<i class="fas fa-print"><h10 class="fw-normal"> Imprimir</h10></i> ',
+                    titleAttr: 'Imprimir',
+                    className: 'animatedd-button'
+                },
         ]
           }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
         });

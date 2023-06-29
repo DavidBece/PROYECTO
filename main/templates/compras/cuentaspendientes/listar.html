@@ -1,65 +1,71 @@
-{% extends 'partials/body.html' %} {% load static %}  {% block contenido %}
+{% extends 'partials/body.html' %} {% load static %} {% block contenido %}
 <div class="wrapper">
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title"> {{titulo}} </h3>
+      <div class="row px-5 mx-5">
+        <div class="col px-5 mx-5">
+          <div class="px-5 mx-5">
+            <div class="fs-1 fw-bold">
+              <h3 class="py-5">{{titulo}}</h3>
             </div>
-  <div class="card-body">
-<table id="example1"  class="table table-bordered table-striped">
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Fecha de Inicio</th>
-      <th>Valor</th>
-      <th>Estado</th>
-      <th>Acciones</th>
+            <div class="table-responsive" style=" background-color: #fcf9f5; border-color: #68411d; border-width: 3px; border-style: solid; padding: 35px;">
+              <table id="example1" class="table table-bordered table-striped py-5">
+                <thead style="background-color: #fcf9f5">
+                  <tr style="background-color: #d4c6b5;text-align: center;">
+                    <th>Nombre de Usuario</th>
+                    <th>Nombre de Producto</th>
+                    <th>Fecha de Inicio</th>
+                    <th>Valor</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for cuentapendiente in cuentaspendientes %} {% if cuentapendiente.estado != "0" %}
+                  <tr style="background-color: #f3eee9">
+                    <td style="color: #68411d; text-align: center;">{{cuentapendiente.nombre}}</td>
+                    <td style="color: #68411d; text-align: center;">{{cuentapendiente.nombre_producto}}</td>
+                    <td style="color: #68411d; text-align: center;">{{cuentapendiente.fecha_inicio}}</td>
+                    <td style="color: #68411d; text-align: center;">{{cuentapendiente.valor}}</td>
+                    <td style="color: #68411d; text-align: center;">{{cuentapendiente.get_estado_display}}</td>
 
-
-    </tr>
-  </thead>
-  <tbody>
-    {% for cuentapendiente in cuentaspendientes %} 
-    {% if cuentapendiente.estado != "0" %}
-      <tr>
-        <td>{{cuentapendiente.nombre}}</td>
-        <td>{{cuentapendiente.fecha_inicio}}</td>
-        <td>{{cuentapendiente.valor}}</td>
-        <td>{{cuentapendiente.get_estado_display}}</td>
-
-        <td>
-          <button  type="button" data-ident="{{cuentapendiente.id}}" class="btnEliminar btn btn-danger"
-                    data-bs-toggle="modal" data-bs-target="#modalConf">
-                    Eliminar</button>
-          <a
-            class="btn btn-primary"
-            href="{% url 'cuenta_pendiente-modificar' cuentapendiente.id %}"
-            >+</a
-          >
-        </td>
-      </tr>
-      {% endif %} 
-    {% endfor %}
-  </tbody>
-</table>
-</div>
-<!-- /.card-body -->
-</div>
-<!-- /.card -->
-</div>
-<!-- /.col -->
-</div>
-<!-- /.row -->
-</div>
-<!-- /.container-fluid -->
-</section>
-<!-- /.content -->
-<a href="{% url 'cuenta_pendiente-crear' %}" class="btn btn-success w-25"
-  >Crear {{titulo}}</a
->
+                    <td style="text-align: center;">
+                      <button
+                        type="button"
+                        data-ident="{{cuentapendiente.id}}"
+                        class="btnEliminar animatede-button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modalConf"
+                      >
+                        Eliminar
+                      </button>
+                      <a
+                        class="btn animatedm-button btn-primary"
+                        href="{% url 'cuenta_pendiente-modificar' cuentapendiente.id %}"
+                        >Modificar</a
+                      >
+                    </td>
+                  </tr>
+                  {% endif %} {% endfor %}
+                </tbody>
+              </table>
+              <a href="{% url 'cuenta_pendiente-crear' %}">
+                <button class="animatedd-button" type="button">
+                  Crear {{titulo}}
+                </button>
+              </a>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
 </div>
 {% endblock contenido %}

@@ -3,16 +3,16 @@
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title"> {{titulo}} </h3>
+      <div class="row px-5 mx-5">
+        <div class="col px-5 mx-5">
+          <div class="px-5 mx-5">
+            <div class="fs-1 fw-bold">
+              <h3 class="py-5"> {{titulo}} </h3>
             </div>
-  <div class="card-body">
-<table id="example1"  class="table table-bordered table-striped">
-  <thead>
-    <tr>
+  <div class="table-responsive" style=" background-color: #fcf9f5; border-color: #68411d; border-width: 3px; border-style: solid; padding: 35px;">
+<table id="example1"  class="table table-bordered table-striped py-5">
+  <thead style="background-color: #fcf9f5">
+    <tr style="background-color: #d4c6b5;text-align: center;">
       <th>ID Usuario</th>
       <th>Dirección</th>
       <th>Fecha de envio</th>
@@ -25,28 +25,33 @@
   </thead>
   <tbody>
     {% for domicilio in domicilios %} {% if domicilio.estado != "0" %}
-    <tr>
-      <td>{{domicilio.usuario}}</td>
-      <td>{{domicilio.direccion}}</td>
-      <td>{{domicilio.fecha_envio}}</td>
-      <td>{{domicilio.fecha_entrega}}</td>
-      <td>{{domicilio.fecha}}</td>
-      <td>{{domicilio.get_estado_display}}</td>
+    <tr style="background-color: #f3eee9">
+      <td style="color: #68411d;text-align: center;">{{domicilio.usuario}}</td>
+      <td style="color: #68411d;text-align: center;">{{domicilio.direccion}}</td>
+      <td style="color: #68411d;text-align: center;">{{domicilio.fecha_envio}}</td>
+      <td style="color: #68411d;text-align: center;">{{domicilio.fecha_entrega}}</td>
+      <td style="color: #68411d;text-align: center;">{{domicilio.fecha}}</td>
+      <td style="color: #68411d;text-align: center;">{{domicilio.get_estado_display}}</td>
 
       <td>
-        <button  type="button" data-ident="{{domicilio.id}}" class="btnEliminar btn btn-danger"
+        <button  type="button" data-ident="{{domicilio.id}}" class="btnEliminar animatede-button"
                     data-bs-toggle="modal" data-bs-target="#modalConf">
                     Eliminar</button>
         <a
-          class="btn btn-primary"
+          class="btn animatedm-button btn-primary"
           href="{% url 'domicilio-modificar' domicilio.id %}"
-          >+</a
+          >Modificar</a
         >
       </td>
     </tr>
     {% endif %} {% endfor %}
   </tbody>
 </table>
+<a href="{% url 'domicilio-crear' %}">
+  <button class="animatedd-button" type="button">
+    Crear {{titulo}}
+  </button>
+</a>
 </div>
 <!-- /.card-body -->
 </div>
@@ -59,8 +64,5 @@
 <!-- /.container-fluid -->
 </section>
 <!-- /.content -->
-<a href="{% url 'domicilio-crear' %}" class="btn btn-success w-25"
-  >Crear {{titulo}}</a
->
 </div>
 {% endblock contenido %}

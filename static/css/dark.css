@@ -1,0 +1,9 @@
+#modo{
+    width: 30px;
+    font-size: 70px;
+    margin: auto;
+    cursor: pointer;
+}
+.dark{
+     filter: invert(100%);
+}
