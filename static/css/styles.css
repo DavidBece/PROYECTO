@@ -5,6 +5,9 @@
   .a:focus{
     outline: none;
   }
+  .cafe-tabla{
+    border-color: #68411d !important;
+  }
   .animated-button {
     display: inline-block;
     padding: 10px 20px;
@@ -156,7 +159,7 @@
     transition: transform 0.3s ease;
   }
   .zoom-image:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   .animatedd-button {
     display: inline-block;
@@ -269,6 +272,7 @@
     transition-duration: 0.5s;
     transform-origin: top bottom;
   }
+
 @media only screen and (min-width: 576px ) and (max-width: 767px){
   .header-contenedor-logo{
     width: 50%;
@@ -283,11 +287,15 @@
   .header-cont-buscar{
     max-width: 80%;
   }
-  .header-cont-menu,.header-cont-iconos,.header-cont-seccion{
+  .header-cont-menu,.header-cont-iconos{
     font-size: 13px;
   }
   .menuu {
     right: 0;
+  }
+  .menuu2{
+    left: 0;
+
   }
 }
 @media only screen and (min-width: 768px ) and (max-width: 991px ){
@@ -304,7 +312,7 @@
     .header-cont-buscar{
       min-width: 60px;
     }
-    .header-cont-iconos,.header-cont-seccion,.header-cont-menu{
+    .header-cont-iconos,.header-cont-menu{
       font-size: 13px;
     }
     .direc{
@@ -329,7 +337,7 @@
       .header-cont-buscar{
         min-width: 120px;
       }
-      .header-cont-menu,.header-cont-seccion,.header-cont-iconos{
+      .header-cont-menu,.header-cont-iconos{
         font-size: 14px;
       }
       .direc{
@@ -351,7 +359,7 @@
     .header-cont-buscar{
       min-width: 300px;
     }
-    .header-cont-iconos,.header-cont-menu,.header-cont-seccion{
+    .header-cont-iconos,.header-cont-menu{
       font-size: 15px;
     }
     .direc{
@@ -373,7 +381,7 @@
     .header-cont-buscar{
       min-width: 350px;
     }
-    .header-cont-iconos,.header-cont-seccion,.header-cont-menu{
+    .header-cont-iconos,.header-cont-menu{
       font-size: 16px;
     }
     .direc{
@@ -432,6 +440,7 @@
     font-size: 14px;
   }
 }
+
 @media only screen and (min-width: 992px ) and (max-width: 1199px ){
   .footer-contenedor{
     height: 400px;
@@ -524,5 +533,9 @@
   }
 }
 .footer-cont-svg{
-  z-index: 1; 
+  z-index: 1;
+  
+}
+.header-cont-seccion,.footer-cont-titulos{
+  font-size: small;
 }

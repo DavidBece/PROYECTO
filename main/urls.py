@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from . import views
+
 
 from main.views import principal, logout_user, body_productos, body_produ_vestuario,body_produ_electricidad, body_produ_fontaneria, body_produ_sellantes, body_produ_pinturas
 # para las iamgenes
@@ -37,13 +39,15 @@ urlpatterns = [
     path('usuarios/', include('usuarios.urls') ),
     path('ingreso_egreso/', include('ingreso_egreso.urls') ),
     path('ventas/', include('ventas.urls') ),
-    
+    path('backup/', include('backup.urls') ),
+        
     path('body-productos/', body_productos, name="body" ),
     path('body-produ-vestuario/', body_produ_vestuario, name="body_vestuario" ),
     path('body-produ-electricidad/', body_produ_electricidad, name="body_electricidad" ),
     path('body-produ-fontaneria/', body_produ_fontaneria, name="body_fontaneria" ),
     path('body-produ-sellantes/', body_produ_sellantes, name="body_sellantes" ),
     path('body-produ-pinturas/', body_produ_pinturas, name="body_pinturas" ),
+
     
 ]
 if settings.DEBUG:

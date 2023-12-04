@@ -46,7 +46,10 @@ INSTALLED_APPS = [
     'django_bootstrap5',#pip install django-bootstrap5
     'crispy_forms', #pip install django-crispy-forms
     'crispy_bootstrap5', #pip install crispy-bootstrap5
-    'django_bootstrap_icons'
+    'django_bootstrap_icons',
+    'formtools',
+    'dbbackup',
+    'backup',
 ]
 CRISPY_ALLOWED_TEMPLATE_PACKS= "bootstrap5"
 CRISPY_TEMPLATE_PACK= "bootstrap5"
@@ -86,11 +89,26 @@ WSGI_APPLICATION = 'main.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+     'default': {
+         'ENGINE': 'django.db.backends.sqlite3',
+         'NAME': BASE_DIR / 'db.sqlite3',
+     },
+    #'default': {
+        #"ENGINE": "django.db.backends.mysql",
+        #"OPTIONS": {
+        #    "read_default_file": 'my.cnf',
+        #    "init_command": "SET default_storage_engine=INNODB",
+       # },
+    #}
 }
+
+# settings.py
+BACKUP_ROOT = os.path.join(BASE_DIR, 'backups')
+# Opciones de copia de seguridad
+DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
+DBBACKUP_STORAGE_OPTIONS = {'location': os.path.join(BASE_DIR, 'backups')}
+DBBACKUP_FILENAME_TEMPLATE = 'CS_{datetime}.{extension}'
+DBBACKUP_EXTENSION = 'backup'
 
 
 # Password validation
@@ -120,9 +138,8 @@ LANGUAGE_CODE = 'es'
 TIME_ZONE = 'America/Bogota'
 
 USE_I18N = True
-
+USE_L10N = True
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
@@ -130,6 +147,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS= [
     os.path.join(BASE_DIR,"static"),
+    ('node_modules',os.path.join(BASE_DIR,'node_modules')),
 ]
 STATIC_ROOT ="/static"
 
@@ -144,9 +162,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.googlemail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'antony.botello@usantoto.edu.co'
-EMAIL_HOST_PASSWORD = 'sznmtodfwqkaujzs'
+EMAIL_HOST_USER = 'jferrosferrreteria@gmail.com'
+EMAIL_HOST_PASSWORD = 'fmvjzcfllwirgxpw'
 EMAIL_USE_TLS = True
 
 LOGIN_URL = 'inicio'
 LOGIN_REDIRECT_URL = 'index'
+
+#AUTH_USER_MODEL = 'accounts.Register'

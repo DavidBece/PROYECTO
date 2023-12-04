@@ -1,36 +1,7 @@
 {% extends 'partials/body.html' %}
 {% block contenido %}
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  @media only screen and (min-width: 576px ) and (max-width: 767px){
 
-    .index-cont-titulo{
-      font-size: 18px;
-    }
-  }
-  @media only screen and (min-width: 768px ) and (max-width: 991px ){
-    .index-cont-titulo{
-      font-size: 18px;
-    }
-  }
-  @media only screen and (min-width: 992px ) and (max-width: 1199px ){
-    .index-cont-titulo{
-      font-size: 20px;
-    }
-  }
-  @media only screen and (min-width: 1200px ) and (max-width: 1400px ){
-    .index-cont-titulo{
-      font-size: 20px;
-    }
-  }
-  @media only screen and (min-width: 1400px ){
-    .index-cont-titulo{
-      font-size: 22px;
-    }
-  }
-
-
-</style>
 
 <div id="carouselExampleAutoplaying" class="carousel slide m-0 p-0 d-none d-sm-block"  data-bs-ride="carousel">
   <div class=" carousel-indicators">
@@ -65,25 +36,25 @@
 
 
 
-<div class="index-cont-contenedor my-5 px-5" >
+<div class="index-cont-contenedor my-5 w-auto" style="min-width: 270px;" >
   <div class=" w-100 p-sm-4 p-md-4 p-xl-5 p-xxl-5" style="background-color: #d4c6b5;">
-    <h3 class="index-cont-titulo  m-0 fw-bold w-100" style="color: #68411d;">Nuestros productos</h3>
+    <h3 class="index-cont-titulo p-4  p-sm-0 ms-2 mb-0 fw-bold w-100" style="color: #68411d;">Nuestros productos</h3>
   </div>
-  <div class=" justify-content-center align-content-center p-5">
+  <div class=" justify-content-center align-content-center p-sm-5 p-3">
 
 
  
     <div class="row align-items-md-stretch justify-content-center">
-      <div class="col-md-9 col-xl-5 mx-4 my-4">
+      <div class="categoria col-md-9 col-xl-5 mx-4 my-5 ">
         <div class="justify-content-center h-100 w-100"  style="background-color: #d4c6b5;">
           <div class=" d-block justify-content-center align-content-center align-items-center text-decoration-none text-light">
-            <div class="imagenes">
+            <div class="imagenes p-3">
               <div class="w-100 d-flex justify-content-center align-items-center ">
-                <img src="/static/css/icons/wheelbarrow-hand-truck-barrow-svgrepo-com.svg" class="d-block zoom-image" width="250px" height="300px" alt="...">
+                <img src="/static/css/icons/wheelbarrow-hand-truck-barrow-svgrepo-com.svg" class="h-auto zoom-image" width="200px" style="max-width: 100%; max-height: 300px;" alt="...">
               </div>
             </div>
-            <div class="pb-3 ">
-              <h2 class=" d-flex index-cont-titulo justify-content-center align-items-center fw-bold" style="color: #68411d; letter-spacing: 4px; font-family: 'Poppins', sans-serif;" >CONSTRUCCIÓN</h2>
+            <div class="pb-3 w-100">
+              <h2 class="d-flex w-100 fs-5 text-center index-cont-titulo justify-content-center align-items-center fw-bold " style="color: #68411d; letter-spacing: 3px; font-family: 'Poppins', sans-serif;" >CONSTRUCCIÓN</h2>
             </div>
             <div class="loco pb-4 w-100 d-flex justify-content-center align-items-center">
               <a href="{% url 'body' %}">
@@ -94,16 +65,16 @@
         </div>
       </div>
 
-      <div class="col-md-9 col-xl-5 mx-4 my-4 ">
+      <div class="categoria col-md-9 col-xl-5 mx-4 my-5 ">
         <div class="justify-content-center h-100 w-100"  style="background-color: #e7e1d8;">
           <div class=" d-block justify-content-center align-content-center align-items-center text-decoration-none text-light">
-            <div class="imagenes">
+            <div class="imagenes p-3">
               <div class="w-100 d-flex justify-content-center align-items-center">
-                <img src="/static/css/icons/construction_engineering_helmet_cog_icon_153230.svg" class="d-block zoom-image" width="200px" height="300px" alt="...">
+                <img src="/static/css/icons/construction_engineering_helmet_cog_icon_153230.svg" class="h-auto zoom-image" width="200px" style="max-width: 100%; max-height: 300px;" alt="...">
               </div>
             </div>
-            <div class="pb-3 justify-content-center align-items-center d-flex">
-              <h2 class="d-flex justify-content-center align-items-center fw-bold index-cont-titulo" style="color: #68411d; letter-spacing: 4px; font-family: 'Poppins', sans-serif;" >PROTECCIÓN Y VESTUARIO</h2>
+            <div class="pb-3 ">
+              <h2 class="d-flex w-100 text-center index-cont-titulo fs-5 justify-content-center align-items-center fw-bold " style="color: #68411d; letter-spacing: 3px; font-family: 'Poppins', sans-serif;" >PROTECCIÓN Y VESTUARIO</h2>
             </div>
             <div class="pb-4 w-100 d-flex justify-content-center align-items-center">
               <a href="{% url 'body_vestuario' %}">              
@@ -114,16 +85,16 @@
         </div>
       </div>
 
-      <div class="col-md-9 col-xl-5 mx-4 my-5 ">
+      <div class="categoria col-md-9 col-xl-5 mx-4 my-5 ">
         <div class="justify-content-center h-100 w-100"  style="background-color: #e7e1d8;">
           <div class=" d-block justify-content-center align-content-center align-items-center text-decoration-none text-light">
-            <div class="imagenes">
+            <div class="imagenes p-3">
               <div class="w-100 d-flex justify-content-center align-items-center">
-                <img src="/static/css/icons/electricity_icon-icons.com_63489.svg" class="d-block zoom-image" width="200px" height="300px" alt="...">
+                <img src="/static/css/icons/electricity_icon-icons.com_63489.svg" class="h-auto zoom-image" width="200px" style="max-width: 100%; max-height: 300px;" alt="...">
               </div>
             </div>
             <div class="pb-3 ">
-              <h2 class=" d-flex justify-content-center align-items-center fw-bold index-cont-titulo" style="color: #68411d; letter-spacing: 4px; font-family: 'Poppins', sans-serif;" >ELECTRICIDAD</h2>
+              <h2 class=" d-flex text-center justify-content-center fs-5 align-items-center fw-bold index-cont-titulo" style="color: #68411d; letter-spacing: 3px; font-family: 'Poppins', sans-serif;" >ELECTRICIDAD</h2>
             </div>
             <div class="pb-4 w-100 d-flex justify-content-center align-items-center">
               <a href="{% url 'body_electricidad' %}">              
@@ -135,16 +106,16 @@
       </div>
 
 
-      <div class="col-md-9 col-xl-5 mx-4 my-5 ">
+      <div class="categoria col-md-9 col-xl-5 mx-4 my-5 ">
         <div class="justify-content-center h-100 w-100"  style="background-color: #d4c6b5;">
           <div class=" d-block justify-content-center align-content-center align-items-center text-decoration-none text-light">
-            <div class="imagenes">
+            <div class="imagenes p-3">
               <div class="w-100 d-flex justify-content-center align-items-center">
-                <img src="/static/css/icons/plumbing_broken_repair_tube_construction_patch_pipe_leak_icon_230274.svg" class="d-block zoom-image" width="200px" height="300px" alt="...">
+                <img src="/static/css/icons/plumbing_broken_repair_tube_construction_patch_pipe_leak_icon_230274.svg" class="h-auto zoom-image" style="max-width: 100%; max-height: 300px;" width="200px" alt="...">
               </div>
             </div>
-            <div class="pb-3 ">
-              <h2 class=" d-flex justify-content-center align-items-center fw-bold index-cont-titulo" style="color: #68411d; letter-spacing: 4px; font-family: 'Poppins', sans-serif;" >FONTANERÍA</h2>
+            <div class="pb-3">
+              <h2 class=" d-flex text-center justify-content-center fs-5 align-items-center fw-bold index-cont-titulo" style="color: #68411d; letter-spacing: 3px; font-family: 'Poppins', sans-serif;" >FONTANERÍA</h2>
             </div>
             <div class="pb-4 w-100 d-flex justify-content-center align-items-center">
               <a href="{% url 'body_fontaneria' %}">              
@@ -155,16 +126,16 @@
         </div>
       </div>
 
-      <div class="col-md-9 col-xl-5 mx-4 my-4 ">
+      <div class="categoria col-md-9 col-xl-5 mx-4 my-5 ">
         <div class="justify-content-center h-100 w-100"  style="background-color: #d4c6b5;">
           <div class=" d-block justify-content-center align-content-center align-items-center text-decoration-none text-light">
-            <div class="imagenes">
+            <div class="imagenes p-3">
               <div class="w-100 d-flex justify-content-center align-items-center">
-                <img src="/static/css/icons/gui_glue_icon_158445.svg" class="d-block zoom-image" width="200px" height="300px" alt="...">
+                <img src="/static/css/icons/gui_glue_icon_158445.svg" class="h-auto zoom-image" width="200px" style="max-width: 100%; max-height: 300px;" alt="...">
               </div>
             </div>
             <div class="pb-3 ">
-              <h2 class=" d-flex justify-content-center align-items-center fw-bold index-cont-titulo" style="color: #68411d; letter-spacing: 4px; font-family: 'Poppins', sans-serif;" >SELLANTES - FIJACIÓN</h2>
+              <h2 class=" d-flex text-center justify-content-center align-items-center fs-5 fw-bold index-cont-titulo" style="color: #68411d; letter-spacing: 3px; font-family: 'Poppins', sans-serif;" >SELLANTES - FIJACIÓN</h2>
             </div>
             <div class="pb-4 w-100 d-flex justify-content-center align-items-center">
               <a href="{% url 'body_sellantes' %}">              
@@ -175,18 +146,18 @@
         </div>
       </div>
 
-      <div class="col-md-9 col-xl-5 mx-4 my-4">
+      <div class="categoria col-md-9 col-xl-5 mx-4 my-5 ">
         <div class="justify-content-center h-100 w-100"  style="background-color: #e7e1d8;">
           <div class=" d-block justify-content-center align-content-center align-items-center text-decoration-none text-light">
-            <div class="imagenes">
-              <div class="w-100 d-flex justify-content-center align-items-center">
-                <img src="/static/css/icons/paint_roller_tool_icon_221315.svg" class="d-block zoom-image" width="200px" height="300px" alt="...">
+            <div class="imagenes p-3">
+              <div class="w-100 d-flex justify-content-center align-items-center ">
+                <img src="/static/css/icons/paint_roller_tool_icon_221315.svg" class="h-auto zoom-image" width="200px" style="max-width: 100%; max-height: 300px;" alt="...">
               </div>
             </div>
             <div class="pb-3 ">
-              <h2 class=" d-flex justify-content-center align-items-center fw-bold index-cont-titulo" style="color: #68411d; letter-spacing: 4px; font-family: 'Poppins', sans-serif;"  >PINTURAS Y COMPLEMENTOS</h2>
+              <h2 class="d-flex text-center w-100 index-cont-titulo fs-5 justify-content-center align-items-center fw-bold " style="color: #68411d; letter-spacing: 3px; font-family: 'Poppins', sans-serif;" >PINTURAS Y COMPLEMENTOS</h2>
             </div>
-            <div class="pb-4 w-100 d-flex justify-content-center align-items-center">
+            <div class="pb-4 pb-4 w-100 d-flex justify-content-center align-items-center">
               <a href="{% url 'body_pinturas' %}">              
                 <button class="animateda-button" type="button">Ir a ello !</button>
               </a>
@@ -196,36 +167,5 @@
       </div>
     </div>
   </div>
-
 </div>
-  
-<script>
-  $(document).ready(function () {
-    $(".slider-items").slick({
-      dots: true, // Muestra los puntos de navegación
-      arrows: false, // Oculta las flechas de navegación
-      infinite: true, // Permite navegar infinitamente
-      speed: 300, // Velocidad de transición
-      slidesToShow: 3, // Número de elementos a mostrar en cada slide
-      slidesToScroll: 1, // Número de elementos a desplazar en cada transición
-      responsive: [
-        {
-          breakpoint: 992,
-          settings: {
-            slidesToShow: 2,
-          },
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 1,
-          },
-        },
-      ],
-    });
-  });
-</script>
-
-
-
 {% endblock contenido %}

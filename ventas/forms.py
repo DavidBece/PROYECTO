@@ -9,7 +9,7 @@ class VentaForm(forms.ModelForm):
     class Meta:
         model=Venta
         fields = "__all__"
-        exclude=["estado", "fecha"]
+        exclude=["estado", "fecha","usuario"]
         widgets={
             'fecha': widgets.DateInput(attrs={'type':'date'},format='%Y-%m-%d')
         }
@@ -49,4 +49,4 @@ class DomicilioUpdateForm(ModelForm):
             'fecha_entrega': widgets.DateInput(attrs={'type':'date'},format='%Y-%m-%d')
 
         }  
-        exclude=["fecha","estado"]
+        exclude=["fecha","estado","usuario","direccion"]

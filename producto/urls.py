@@ -24,13 +24,13 @@ urlpatterns = [
     path('unidades/modificar/<int:pk>/', unidades_modificar, name="unidades-modificar" ),
     path('unidades/eliminar/<int:pk>/', unidades_eliminar, name="unidades-eliminar" ),
     
-    path('subcategoria/', subcategoria_listar, name="subcategoria" ),
-    path('subcategoria/crear/', subcategoria_crear, name="subcategoria-crear" ),
-    path('subcategoria/modificar/<int:pk>/', subcategoria_modificar, name="subcategoria-modificar" ),
-    path('subcategoria/eliminar/<int:pk>/', subcategoria_eliminar, name="subcategoria-eliminar" ),
+    path('subcategoría/', subcategoria_listar, name="subcategoria" ),
+    path('subcategoría/crear/', subcategoria_crear, name="subcategoria-crear" ),
+    path('subcategoría/modificar/<int:pk>/', subcategoria_modificar, name="subcategoria-modificar" ),
+    path('subcategoría/eliminar/<int:pk>/', subcategoria_eliminar, name="subcategoria-eliminar" ),
     
     path('categoria/', categoria_listar, name="categoria" ),
-    path('categoria/crear/', categoria_crear, name="categoria-crear" ),
-    path('categoria/modificar/<int:pk>/', categoria_modificar, name="categoria-modificar" ),
-    path('categoria/eliminar/<int:pk>/', categoria_eliminar, name="categoria-eliminar" ),
+    path('categoría/crear/', categoria_crear, name="categoria-crear" ),
+    path('categoría/modificar/<int:pk>/', categoria_modificar, name="categoria-modificar" ),
+    path('categoría/eliminar/<int:pk>/', categoria_eliminar, name="categoria-eliminar" ),
 ]

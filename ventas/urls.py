@@ -10,10 +10,10 @@ urlpatterns = [
     path('venta/eliminar/<int:pk>/', venta_eliminar, name="venta-eliminar" ),
     
     
-    path('metodo de pago/', metododepago_listar, name="metododepago" ),
-    path('metodo de pago/crear/', metododepago_crear, name="metododepago-crear" ),
-    path('metodo de pago/modificar/<int:pk>/', metododepago_modificar, name="metododepago-modificar" ),
-    path('metodo de pago/eliminar/<int:pk>/', metododepago_eliminar, name="metododepago-eliminar" ),
+    path('método de pago/', metododepago_listar, name="metododepago" ),
+    path('método de pago/crear/', metododepago_crear, name="metododepago-crear" ),
+    path('método de pago/modificar/<int:pk>/', metododepago_modificar, name="metododepago-modificar" ),
+    path('método de pago/eliminar/<int:pk>/', metododepago_eliminar, name="metododepago-eliminar" ),
     
     
     path('domicilio/', domicilio_listar, name="domicilio" ),

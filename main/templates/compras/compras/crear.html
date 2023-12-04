@@ -1,19 +1,27 @@
 {% extends 'partials/body.html' %}
 {% load crispy_forms_tags %}
 
-
+{% if request.user.groups.first.name == "Administrador" or request.user.groups.first.name == "Proveedor" %}
 {% block contenido %}
-<div class="container-fluid m-5" style="border: 6px solid white;">
-    <div class="fs-1 fw-bold">
-        <h3 class="" style="color: #68411d;">{{titulo}}</h3>
-      </div>
-    <div class="rounded card p-3 col-md-4" style="background-color: #fcf9f5;">
-      <form action="" method="POST" enctype="multipart/form-data" style="color: #68411d; background-color: #fcf9f5;">
+<ol class="breadcrumb px-3 float-sm-right d-flex justify-content-end" style="min-width: 270px;">
+  <li class="breadcrumb-item fw-bolder letras-texto"><a href="{% url 'index' %}" style="text-decoration: none; color: #68411d;">Inicio</a></li>
+  <li class="breadcrumb-item active fw-bolder letras-texto" style="color: #7e6c5c;">{{titulo}}</li>
+  <li class="breadcrumb-item active fw-bolder letras-texto" style="color: #7e6c5c;">crear</li>
+</ol>
+
+<div class="container-fluid" style="border: 6px solid white;" >
+  <div class="row d-flex justify-content-center" style="min-width: 250px;">
+    <div class="fs-1 fw-bold m-5 text-center">
+      <h3 class="" style="color: #68411d;">{{titulo}}</h3>
+    </div>
+    <div class="rounded card p-3 col-11 col-sm-8 col-md-6 col-xl-5 col-xxl-4" style="background-color: #fcf9f5;">
+      <form  action="" method="POST" enctype="multipart/form-data" style="color: #68411d; background-color: #fcf9f5;">
         {% csrf_token %}
         {{form|crispy}}
-        <button class="animatedcom-button" type="submit" >Agregar {{titulo}}</button>
-    </form>  
+        <button class="animatedcom-button" style="text-decoration: none;" type="submit">Agregar {{titulo}}</button>
+      </form>
     </div>
+  </div>
 </div>
 
 <style>
@@ -59,4 +67,4 @@
       }
 </style>
 {% endblock contenido %}
-    
+{% endif %}

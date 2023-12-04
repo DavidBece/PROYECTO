@@ -4,6 +4,13 @@
     margin: auto;
     cursor: pointer;
 }
-.dark{
-     filter: invert(100%);
+#botonInvertir {
+    position: fixed ;
+    top: 50% !important;
+    right: 20px;
+    transform: translate(50%, -50%);
+    z-index: 100;
+}
+.invertido{
+    filter: invert(100%);
 }

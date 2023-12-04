@@ -1,50 +1,38 @@
 {% extends 'partials/body.html' %}  {% load static %} {% block contenido %}
+{% if request.user.groups.first.name == "Administrador" %}
+<ol class="breadcrumb px-3 float-sm-right d-flex justify-content-end">
+  <li class="breadcrumb-item fw-bolder letras-texto"><a href="{% url 'index' %}" style="text-decoration: none; color: #68411d;">Inicio</a></li>
+  <li class="breadcrumb-item active fw-bolder letras-texto" style="color: #7e6c5c;">{{titulo}}</li>
+</ol>
 <div class="wrapper">
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
-      <div class="row px-5 mx-5">
-        <div class="col px-5 mx-5">
-          <div class="px-5 mx-5">
+      <div class="row px-1 px-sm-3" style="min-width: 270px;">
+        <div class="col px-1 px-sm-3">
+          <div class="px-1 px-sm-3">
             <div class="fs-1 fw-bold">
               <h3 class="py-5"> {{titulo}} </h3>
             </div>
-  <div class="table-responsive" style=" background-color: #fcf9f5; border-color: #68411d; border-width: 3px; border-style: solid; padding: 35px;">
+  <div class="table-responsive p-3" style=" background-color: #fcf9f5; border-color: #68411d; border-width: 3px; border-style: solid;">
 <table id="example1" class="table table-bordered table-striped py-5">
   <thead style="background-color: #fcf9f5">
     <tr style="background-color: #d4c6b5;text-align: center;">
+      <th>Producto</th>
       <th>Cantidad</th>
-      <th>Detalle venta</th>
-      <th>Detalle compra</th>
-      <th>Estado</th>
-
-      <th>Acciones</th>
+      <th>Precio venta</th>
     </tr>
   </thead>
   <tbody>
     {% for stock in stocks %} {% if stock.estado != "0" %}
     <tr style="background-color: #f3eee9">
+      <td style="color: #68411d;text-align: center;">{{stock.producto.nombre}}</td>
       <td style="color: #68411d;text-align: center;">{{stock.cantidad}}</td>
-      <td style="color: #68411d;text-align: center;">{{stock.detalle_venta}}</td>
-      <td style="color: #68411d;text-align: center;">{{stock.detalle_compra}}</td>
-      <td style="color: #68411d;text-align: center;">{{stock.get_estado_display}}</td>
-
-      <td style="text-align: center;">
-        <button  type="button" data-ident="{{stock.id}}" class="btnEliminar animatede-button"
-                    data-bs-toggle="modal" data-bs-target="#modalConf">
-                    Eliminar</button>
-        <a class="btn animatedm-button btn-primary" href="{% url 'stock-modificar' stock.id %}"
-          >Modificar</a>
-      </td>
+      <td style="color: #68411d;text-align: center;">{{stock.detalle_venta.producto.precio_colombiano}}</td>
     </tr>
     {% endif %} {% endfor %}
   </tbody>
 </table>
-<a href="{% url 'stock-crear' %}">
-  <button class="animatedd-button" type="button">
-    Crear {{titulo}}
-  </button>
-</a>
 </div>
 <!-- /.card-body -->
 </div>
@@ -58,4 +46,5 @@
 </section>
 <!-- /.content -->
 </div>
+{% endif %}
 {% endblock contenido %}
